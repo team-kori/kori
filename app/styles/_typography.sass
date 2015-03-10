@@ -1,0 +1,108 @@
+@mixin link-transform
+  -webkit-transition: color ease-in-out .4s
+  -moz-transition: color ease-in-out .4s
+  -ms-transition: color ease-in-out .4s
+  -o-transition: color ease-in-out .4s
+  transition: color ease-in-out .4s
+  color: #2c3e50
+  text-decoration: none
+body
+  font-family: Segoe UI, Arial, "Helvetica Neue", Helvetica, sans-serif
+  font-size: 62.5%
+  line-height: 1.6em
+  text-rendering: optimizeLegibility
+body, input, button
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+  line-height: 1.2em
+  margin-bottom: 0.2em
+h1
+  font-size: 2.8em
+  a
+    font-weight: bold
+h2
+  font-size: 2.2em
+h3
+  font-size: 1.8em
+h4
+  font-size: 1.6em
+h5
+  font-size: 1.2em
+h6
+  font-size: 1.0em
+  font-weight: bold
+a
+  @include link-transform
+  &:visited
+    @include link-transform
+  &:hover
+    color: #000
+    text-decoration: underline
+  &:active
+    color: #ff4a40
+button, input[type=reset], input[type=submit]
+  &:active
+    color: #ff4a40
+p
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  -ms-hyphens: auto
+  hyphens: auto
+  font-size: 1.6em
+  line-height: 1.5em
+  margin: 0 0 1.2em
+  word-break: break-word
+ul, ol
+  li
+    font-size: 1.6em
+    line-height: 1.5em
+ul ol, ol ul
+  li
+    font-size: 1em
+    line-height: 1.2em
+footer, .entry-meta
+  color: rgb(44, 54, 74)
+  font-size: 1.4em
+  line-height: 1.5em
+strong
+  font-weight: bold
+em
+  font-style: italic
+code, pre
+  font-family: monospace
+  font-size: 1.6em
+blockquote
+  font-style: italic
+  &:before
+    content: "\201C"
+    display: inline-block
+    padding-right: .6em
+dl
+  font-size: 1.6em
+  line-height: 1.3em
+  dt
+    font-weight: bold
+    line-height: 1.3em
+  dd
+    &:first-line
+      padding-left: 0.5em
+@media print
+  html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, code, em, img, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, section, summary, time, audio, video
+    background: transparent !important
+    box-shadow: none !important
+    color: #000 !important
+    text-shadow: none !important
+  img
+    -webkit-filter: grayscale(100%)
+    -moz-filter: grayscale(100%)
+    filter: grayscale(100%)
+  p, h1, h2, h3
+    orphans: 3
+    widows: 3
+  h2, h3
+    page-break-after: avoid
+  a[href]
+    &:after
+      content: none !important

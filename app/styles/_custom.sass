@@ -1,0 +1,32 @@
+$bg-c: #4bc6e8
+$border-c: #eee
+$shadow-c: #6e6e6a
+$side-bg-c: #cbd6d6
+$select-bg-c: #0FA
+$header-c: #c7eee6
+$header-bg-c: #3d8599
+$header-hover-c: #a0e2d5
+$link-active-c: #ff4a40
+
+@mixin left-shadow
+	-webkit-box-shadow: (-3px) 4px 4px $shadow-c
+	box-shadow: (-3px) 4px 4px $shadow-c
+
+@mixin center-shadow
+	-webkit-box-shadow: 0 4px 4px $shadow-c
+	box-shadow: 0 4px 4px $shadow-c
+
+@mixin right-shadow
+	-webkit-box-shadow: 3px 4px 4px $shadow-c
+	box-shadow: 3px 4px 4px $shadow-c
+
+html
+	overflow-y: scroll
+	-webkit-text-size-adjust: 100%
+	-ms-text-size-adjust: 100%
+	scrollbar-arrow-color: #fff
+	scrollbar-face-color: $select-bg-c
+	scrollbar-highlight-color: #000
+	scrollbar-shadow-color: #fff
+@-ms-viewport
+	width: device-width
