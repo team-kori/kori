@@ -6,8 +6,8 @@ var ngAnnotate = require('gulp-ng-annotate');
 
 gulp.task('js', function () {
     gulp.src([
-        'js/**/*.js',
-        'js/**/**/*.js'
+        'app/js/**/*.js',
+        'app/js/**/**/*.js'
     ])
         .pipe(sourcemaps.init())
         .pipe(concat('app.js'))
@@ -18,5 +18,5 @@ gulp.task('js', function () {
 });
 
 gulp.task('watch', ['js'], function () {
-    gulp.watch('js/**/*.js', ['js'])
+    gulp.watch('app/js/**/*.js', ['js'])
 });

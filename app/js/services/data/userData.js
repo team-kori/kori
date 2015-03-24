@@ -7,7 +7,7 @@ koriApp.factory('userData', [
     'authentication',
     function ($http, $resource, baseServiceUrl, authentication) {
 
-        var userServiceUrl = baseServiceUrl + 'user/';
+        var userServiceUrl = baseServiceUrl + 'users/';
 
         function getUserProfile() {
             var resource = $resource(userServiceUrl + 'profile', {}, {
@@ -21,12 +21,12 @@ koriApp.factory('userData', [
         }
 
         function registerUser(user) {
-            return $resource(userServiceUrl + 'register')
+            return $resource(userServiceUrl)
                 .save(user);
         }
 
         function loginUser(user) {
-            var resource = $resource(userServiceUrl + 'login')
+            var resource = $resource(baseServiceUrl + 'login')
                 .save(user);
 
             resource.$promise
@@ -51,9 +51,9 @@ koriApp.factory('userData', [
         }
 
         function changeUserPassword(pass) {
-            var resource = $resource(userServiceUrl + 'changePassword', {}, {
+            var resource = $resource(baseServiceUrl + 'requestPasswordReset', {}, {
                 update: {
-                    method: 'PUT',
+                    method: 'POST',
                     headers: authentication.getHeaders()
                 }
             });

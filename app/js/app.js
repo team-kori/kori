@@ -72,7 +72,7 @@ var koriApp = angular.module('koriApp', [
             localStorageServiceProvider.setStorageType('localStorage');
         }]);
 
-koriApp.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');
+koriApp.constant('baseServiceUrl', 'https://api.parse.com/1/');
 koriApp.constant('pageSize', 5);
 
 koriApp.run(function ($rootScope, $location, authentication) {
