@@ -10,7 +10,7 @@ gulp.task('js', function () {
         'app/js/**/**/*.js'
     ])
         .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
+        .pipe(concat('app/app.js'))
         .pipe(ngAnnotate())
         //.pipe(uglify())
         .pipe(sourcemaps.write())

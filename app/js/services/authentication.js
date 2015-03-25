@@ -1,5 +1,3 @@
-'use strict';
-
 koriApp.factory('authentication', [
     'localStorageService',
     function (localStorageService) {

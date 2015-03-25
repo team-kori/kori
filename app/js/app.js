@@ -2,23 +2,19 @@
 
 var koriApp = angular.module('koriApp', [
     'ngRoute',
-    'ngResource',
-    'LocalStorageModule',
-    'validation.match',
-    'ui.bootstrap.pagination'
+    'ui.bootstrap'
 ])
 
     .config([
         '$routeProvider',
-        'localStorageServiceProvider',
-        function ($routeProvider, localStorageServiceProvider) {
+        function ($routeProvider) {
             $routeProvider.when('/', {
                 title: 'Home',
                 templateUrl: 'templates/home.html',
-                controller: 'HomeCtrl'
+                controller: 'HomeController'
             });
 
-            $routeProvider.when('/login', {
+            /*$routeProvider.when('/login', {
                 title: 'Login',
                 templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
@@ -64,22 +60,19 @@ var koriApp = angular.module('koriApp', [
                 title: 'Edit user profile',
                 templateUrl: 'templates/edit-profile.html',
                 controller: 'EditProfileCtrl'
-            });
+            });*/
 
             $routeProvider.otherwise({redirectTo: '/'});
-
-            // Web storage settings
-            localStorageServiceProvider.setStorageType('localStorage');
         }]);
 
 koriApp.constant('baseServiceUrl', 'https://api.parse.com/1/');
 koriApp.constant('pageSize', 5);
 
-koriApp.run(function ($rootScope, $location, authentication) {
+koriApp.run(function ($rootScope, $location) {
 
-    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+    /*$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         $rootScope.title = current.$$route.title;
-    });
+    });*/
 
     $rootScope.$on('$locationChangeStart', function () {
         if ($location.path().indexOf('/user/') != -1 && !authentication.isLoggedIn()) {
