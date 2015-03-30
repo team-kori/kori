@@ -1,18 +1,19 @@
 {
-  "name": "Ads-Angular",
-  "description": "Course project for AngularJS course in Software University",
-  "version": "0.0.1-beta",
-  "homepage": "https://github.com/astoimenov/angular-project",
-  "license": "MIT",
-  "dependencies": {
-    "angular": "1.2.x",
-    "angular-local-storage": "^0.1.5",
-    "angular-route": "1.2.x",
-    "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.x",
-    "angular-resource": "~1.3.x",
-    "angular-input-match": "",
-    "html5-boilerplate": "~4.3.0",
-    "angular-bootstrap": "~0.12.1"
-  }
+    "name": "Ads-Angular",
+    "description": "Course project for AngularJS course in Software University",
+    "version": "0.0.1-beta",
+    "homepage": "https://github.com/astoimenov/angular-project",
+    "license": "MIT",
+    "dependencies": {
+        "angular": "1.2.x",
+        "angular-local-storage": "^0.1.5",
+        "angular-route": "1.2.x",
+        "angular-loader": "1.2.x",
+        "angular-mocks": "~1.2.x",
+        "angular-resource": "~1.3.x",
+        "angular-input-match": "",
+        "html5-boilerplate": "~4.3.0",
+        "angular-bootstrap": "~0.12.1",
+        "restangular": "~1.4.0"
+    }
 }

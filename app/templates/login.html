@@ -1,21 +1,19 @@
-<div class="btf-modal">
-    <form name="login-form">
-        <fieldset>
-            <legend>Login</legend>
+<form name="login-form">
+    <fieldset>
+        <legend>Login</legend>
 
-            <label for="inputUsername">Username</label>
-            <input type="text" class="form-control empty"
-                   id="inputUsername"
-                   ng-model="user.username" required><br/>
+        <label for="inputUsername">Username</label>
+        <input type="text" class="form-control empty"
+               id="inputUsername"
+               ng-model="user.username" required><br/>
 
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control empty"
-                   id="inputPassword"
-                   ng-model="user.password" required><br/>
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control empty"
+               id="inputPassword"
+               ng-model="user.password" required><br/>
 
-            <button type="submit" ng-click="login(user)" class="btn btn-primary">Submit</button>
+        <button type="submit" ng-click="login(user)">Submit</button>
 
-            <a href="#/register" class="btn btn-link">Register here</a>
-        </fieldset>
-    </form>
-</div>
+        <a ng-click="openRegister()">Register here</a>
+    </fieldset>
+</form>

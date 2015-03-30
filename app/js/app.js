@@ -2,77 +2,57 @@
 
 var koriApp = angular.module('koriApp', [
     'ngRoute',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngResource'
 ])
 
     .config([
         '$routeProvider',
-        function ($routeProvider) {
+        '$locationProvider',
+        function ($routeProvider, $locationProvider) {
+            $locationProvider.hashPrefix('!');
+            $locationProvider.html5Mode(true);
+
             $routeProvider.when('/', {
-                title: 'Home',
+                title: 'Начало',
                 templateUrl: 'templates/home.html',
                 controller: 'HomeController'
             });
 
-            /*$routeProvider.when('/login', {
-                title: 'Login',
-                templateUrl: 'templates/login.html',
-                controller: 'LoginCtrl'
+            $routeProvider.when('/events', {
+                title: 'Събития',
+                templateUrl: 'templates/events.html',
+                controller: 'EventsController'
             });
 
-            $routeProvider.when('/register', {
-                title: 'Register',
-                templateUrl: 'templates/register.html',
-                controller: 'RegisterCtrl'
+            $routeProvider.when('/categories', {
+                title: 'Категории',
+                templateUrl: 'templates/categories.html',
+                controller: 'CategoriesController'
             });
 
-            $routeProvider.when('/user/home', {
-                title: 'Home',
-                templateUrl: 'templates/user-home.html',
+            $routeProvider.when('/about-us', {
+                title: 'За нас',
+                templateUrl: 'templates/about-us.html',
                 controller: 'UserHomeCtrl'
             });
 
-            $routeProvider.when('/user/ads', {
-                title: 'My ads',
-                templateUrl: 'templates/user-home.html',
-                controller: 'UserAdsCtrl'
-            });
-
-            $routeProvider.when('/user/ads/publish', {
-                title: 'Publish new ad',
-                templateUrl: 'templates/publish-new-ad.html',
-                controller: 'PublishNewAdCtrl'
-            });
-
-            $routeProvider.when('/user/ads/edit/:id', {
-                title: 'Edit ad',
-                templateUrl: 'templates/edit-ad.html',
-                controller: 'EditAdCtrl'
-            });
-
-            $routeProvider.when('/user/ads/delete/:id', {
-                title: 'Delete ad',
-                templateUrl: 'templates/delete-ad.html',
-                controller: 'DeleteAdCtrl'
-            });
-
             $routeProvider.when('/user/profile', {
-                title: 'Edit user profile',
+                title: 'Профил',
                 templateUrl: 'templates/edit-profile.html',
-                controller: 'EditProfileCtrl'
-            });*/
+                controller: 'EditProfileController'
+            });
 
             $routeProvider.otherwise({redirectTo: '/'});
         }]);
 
 koriApp.constant('baseServiceUrl', 'https://api.parse.com/1/');
-koriApp.constant('pageSize', 5);
 
 koriApp.run(function ($rootScope, $location) {
 
-    /*$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        $rootScope.title = current.$$route.title;
-    });*/
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+     $rootScope.title = current.$$route.title;
+     });
 
     $rootScope.$on('$locationChangeStart', function () {
         if ($location.path().indexOf('/user/') != -1 && !authentication.isLoggedIn()) {

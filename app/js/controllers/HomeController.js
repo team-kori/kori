@@ -3,16 +3,17 @@
 koriApp.controller('HomeController', [
     '$scope',
     '$modal',
-    function ($scope, $modal) {
+    '$rootScope',
+    function ($scope, $modal, $rootScope) {
         $scope.openLogin = function () {
-            $modal.open({
+            $rootScope.loginModal = $modal.open({
                 templateUrl: 'templates/login.html',
                 controller: 'LoginController'
             });
         };
 
         $scope.openRegister = function () {
-            $modal.open({
+            $rootScope.registerModal = $modal.open({
                 templateUrl: 'templates/register.html',
                 controller: 'RegisterController'
             });

@@ -19,6 +19,7 @@
                id="confirmPassword" name="confirmPassword"
                ng-model="user.confirmPassword"
                match="user.password" required><br/>
+
         <div data-ng-show="form.confirmPassword.$error.match">Passwords do not match!</div>
 
         <label for="inputFirstName">Име</label>
@@ -46,6 +47,6 @@
             <div class="ripple-wrapper"></div>
         </button>
 
-        <a href="#/login" class="btn btn-link">Login here</a>
+        <a ng-click="openLogin()">Login here</a>
     </fieldset>
 </form>

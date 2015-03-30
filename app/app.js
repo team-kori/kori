@@ -17,52 +17,52 @@ var koriApp = angular.module('koriApp', [
             });
 
             /*$routeProvider.when('/login', {
-                title: 'Login',
-                templateUrl: 'templates/login.html',
-                controller: 'LoginCtrl'
-            });
+             title: 'Login',
+             templateUrl: 'templates/login.html',
+             controller: 'LoginCtrl'
+             });
 
-            $routeProvider.when('/register', {
-                title: 'Register',
-                templateUrl: 'templates/register.html',
-                controller: 'RegisterCtrl'
-            });
+             $routeProvider.when('/register', {
+             title: 'Register',
+             templateUrl: 'templates/register.html',
+             controller: 'RegisterCtrl'
+             });
 
-            $routeProvider.when('/user/home', {
-                title: 'Home',
-                templateUrl: 'templates/user-home.html',
-                controller: 'UserHomeCtrl'
-            });
+             $routeProvider.when('/user/home', {
+             title: 'Home',
+             templateUrl: 'templates/user-home.html',
+             controller: 'UserHomeCtrl'
+             });
 
-            $routeProvider.when('/user/ads', {
-                title: 'My ads',
-                templateUrl: 'templates/user-home.html',
-                controller: 'UserAdsCtrl'
-            });
+             $routeProvider.when('/user/ads', {
+             title: 'My ads',
+             templateUrl: 'templates/user-home.html',
+             controller: 'UserAdsCtrl'
+             });
 
-            $routeProvider.when('/user/ads/publish', {
-                title: 'Publish new ad',
-                templateUrl: 'templates/publish-new-ad.html',
-                controller: 'PublishNewAdCtrl'
-            });
+             $routeProvider.when('/user/ads/publish', {
+             title: 'Publish new ad',
+             templateUrl: 'templates/publish-new-ad.html',
+             controller: 'PublishNewAdCtrl'
+             });
 
-            $routeProvider.when('/user/ads/edit/:id', {
-                title: 'Edit ad',
-                templateUrl: 'templates/edit-ad.html',
-                controller: 'EditAdCtrl'
-            });
+             $routeProvider.when('/user/ads/edit/:id', {
+             title: 'Edit ad',
+             templateUrl: 'templates/edit-ad.html',
+             controller: 'EditAdCtrl'
+             });
 
-            $routeProvider.when('/user/ads/delete/:id', {
-                title: 'Delete ad',
-                templateUrl: 'templates/delete-ad.html',
-                controller: 'DeleteAdCtrl'
-            });
+             $routeProvider.when('/user/ads/delete/:id', {
+             title: 'Delete ad',
+             templateUrl: 'templates/delete-ad.html',
+             controller: 'DeleteAdCtrl'
+             });
 
-            $routeProvider.when('/user/profile', {
-                title: 'Edit user profile',
-                templateUrl: 'templates/edit-profile.html',
-                controller: 'EditProfileCtrl'
-            });*/
+             $routeProvider.when('/user/profile', {
+             title: 'Edit user profile',
+             templateUrl: 'templates/edit-profile.html',
+             controller: 'EditProfileCtrl'
+             });*/
 
             $routeProvider.otherwise({redirectTo: '/'});
 
@@ -76,8 +76,8 @@ koriApp.constant('pageSize', 5);
 koriApp.run(["$rootScope", "$location", "authentication", function ($rootScope, $location, authentication) {
 
     /*$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        $rootScope.title = current.$$route.title;
-    });*/
+     $rootScope.title = current.$$route.title;
+     });*/
 
     $rootScope.$on('$locationChangeStart', function () {
         if ($location.path().indexOf('/user/') != -1 && !authentication.isLoggedIn()) {
@@ -100,11 +100,11 @@ koriApp.controller('HomeController', [
     '$scope',
     function ($scope, ngDialog) {
         /*$scope.openLogin = function () {
-            ngDialog.open({
-                template: 'templates/login.html',
-                controller: 'LoginController'
-            });
-        }*/
+         ngDialog.open({
+         template: 'templates/login.html',
+         controller: 'LoginController'
+         });
+         }*/
     }
 ]);
 /* LoginController */
