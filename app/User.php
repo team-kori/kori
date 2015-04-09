@@ -24,9 +24,25 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $fillable = [
-		'name',
+		'username',
+		'firstName',
+		'lastName',
 		'email',
-		'password'
+		'password',
+        'profilePic',
+        'facebook',
+        'twitter',
+        'linkedIn',
+        'behance',
+        'devianArt',
+        'youtube',
+        'gplus',
+        'site',
+        'birthDate',
+        'country',
+        'city',
+        'phoneNumber',
+        'isArtist',
 	];
 
 	/**
@@ -38,5 +54,35 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		'password',
 		'remember_token'
 	];
+
+    public function blogPosts()
+    {
+        return $this->hasMany( 'Kori\BlogPost' );
+    }
+
+    public function comments()
+    {
+        return $this->hasMany( 'Kori\Comment' );
+    }
+
+    public function creations()
+    {
+        return $this->hasMany( 'Kori\Creation' );
+    }
+
+    public function galleries()
+    {
+        return $this->hasMany( 'Kori\Gallery' );
+    }
+
+    public function events()
+    {
+        return $this->hasMany( 'Kori\Event' );
+    }
+
+    public function category()
+    {
+        return $this->belongsToMany( 'Kori\Category' );
+    }
 
 }
