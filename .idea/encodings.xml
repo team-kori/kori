@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/.editorconfig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/.gitattributes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/.gitignore" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/controllers/HomeController.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/controllers/LoginController.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/controllers/RegisterController.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/directives/navigation.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/services/authentication.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/services/data/userData.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/js/services/notification.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/_custom.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/_dashicons.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/_layers.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/_modal.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/_reset.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/_responsive.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/_typography.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/bootstrap.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/style.css.map" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/style.sass" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/templates/directives/navigation.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/templates/home.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/templates/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/templates/pagination/pagination.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bower_components/angular-local-storage/package.json" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

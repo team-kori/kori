@@ -1,22 +1,16 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var ngAnnotate = require('gulp-ng-annotate');
+var elixir = require('laravel-elixir');
 
-gulp.task('js', function () {
-    gulp.src([
-        'app/js/**/*.js',
-        'app/js/**/**/*.js'
-    ])
-        .pipe(sourcemaps.init())
-        .pipe(concat('app/app.js'))
-        .pipe(ngAnnotate())
-        //.pipe(uglify())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('.'))
-});
+/*
+ |--------------------------------------------------------------------------
+ | Elixir Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Elixir provides a clean, fluent API for defining some basic Gulp tasks
+ | for your Laravel application. By default, we are compiling the Less
+ | file for our application, as well as publishing vendor resources.
+ |
+ */
 
-gulp.task('watch', ['js'], function () {
-    gulp.watch('app/js/**/*.js', ['js'])
+elixir(function(mix) {
+    mix.less('app.less');
 });
