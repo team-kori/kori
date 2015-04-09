@@ -1,11 +1,12 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php namespace Kori\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Kori\Http\Controllers\Controller;
 
-class PasswordController extends Controller {
+class PasswordController extends Controller
+{
 
 	/*
 	|--------------------------------------------------------------------------
@@ -23,16 +24,17 @@ class PasswordController extends Controller {
 	/**
 	 * Create a new password controller instance.
 	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\PasswordBroker  $passwords
+	 * @param  \Illuminate\Contracts\Auth\Guard          $auth
+	 * @param  \Illuminate\Contracts\Auth\PasswordBroker $passwords
+	 *
 	 * @return void
 	 */
-	public function __construct(Guard $auth, PasswordBroker $passwords)
+	public function __construct( Guard $auth, PasswordBroker $passwords )
 	{
 		$this->auth = $auth;
 		$this->passwords = $passwords;
 
-		$this->middleware('guest');
+		$this->middleware( 'guest' );
 	}
 
 }
