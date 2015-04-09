@@ -1,6 +1,7 @@
-<?php namespace App\Commands;
+<?php namespace Kori\Commands;
 
-abstract class Command {
+abstract class Command
+{
 
 	//
 
