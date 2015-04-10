@@ -1,5 +1,6 @@
 <?php namespace Kori;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -9,26 +10,26 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
 
-	use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [
-		'username',
-		'firstName',
-		'lastName',
-		'email',
-		'password',
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'username',
+        'firstName',
+        'lastName',
+        'email',
+        'password',
         'profilePic',
         'facebook',
         'twitter',
@@ -43,17 +44,39 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'city',
         'phoneNumber',
         'isArtist',
-	];
+    ];
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = [
-		'password',
-		'remember_token'
-	];
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+        'remember_token'
+    ];
+
+    /**
+     * Set the birthDate attribute
+     *
+     * @param $date
+     */
+    public function setBirthDateAttribute( $date )
+    {
+        $this->attributes['birthDate'] = Carbon::createFromFormat( 'Y-m-d', $date );
+    }
+
+    /**
+     * Get the birthDate attribute
+     *
+     * @param $date
+     *
+     * @return Carbon
+     */
+    public function getBirthDateAttribute( $date )
+    {
+        return new Carbon( $date );
+    }
 
     public function blogPosts()
     {

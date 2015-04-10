@@ -1,26 +1,26 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-class CreateCreationsTable extends Migration {
+class CreateCreationsTable extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('creations', function(Blueprint $table)
-		{
-			$table->increments('id');
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create( 'creations', function ( Blueprint $table ) {
+            $table->increments( 'id' );
             $table->integer( 'user_id' )->unsigned();
             $table->integer( 'gallery_id' )->unsigned();
             $table->string( 'fileUrl' );
             $table->text( 'description' );
             $table->integer( 'likes' );
-			$table->timestamps();
+            $table->timestamps();
 
             $table->foreign( 'user_id' )
                 ->references( 'id' )
@@ -31,17 +31,17 @@ class CreateCreationsTable extends Migration {
                 ->references( 'id' )
                 ->on( 'galleries' )
                 ->onDelete( 'cascade' );
-		});
-	}
+        } );
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('creations');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop( 'creations' );
+    }
 
 }

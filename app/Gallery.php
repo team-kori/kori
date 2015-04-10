@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model {
+class Gallery extends Model
+{
 
     protected $table = 'galleries';
 
