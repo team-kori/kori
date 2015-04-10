@@ -7,7 +7,7 @@ Form::macro( 'tel', function ( $value ) {
 @section('content')
     @include('errors.list')
 
-    {!! Form::model($user, ['method' => 'PATCH', 'url' => 'users/' . $user->username]) !!}
+    {!! Form::model($user, ['method' => 'PATCH', 'files' => true, 'url' => 'users/' . $user->username]) !!}
 
     <div class="row">
         {{-- Username form input --}}

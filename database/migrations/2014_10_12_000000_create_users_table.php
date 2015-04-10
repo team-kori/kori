@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string( 'firstName' );
             $table->string( 'lastName' );
             $table->string( 'email' )->unique();
-            $table->binary( 'profilePic' );
+            $table->string( 'profilePic' );
             $table->string( 'facebook' );
             $table->string( 'twitter' );
             $table->string( 'gplus' );

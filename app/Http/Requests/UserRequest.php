@@ -25,7 +25,7 @@ class UserRequest extends Request
             'firstName' => 'max:255|alpha_dash',
             'lastName' => 'max:255|alpha_dash',
             'email' => 'max:255|email',
-            'profilePic' => 'image',
+            'profilePic' => '',
             'facebook' => 'max:255|active_url',
             'twitter' => 'max:255|active_url',
             'behance' => 'max:255|active_url',

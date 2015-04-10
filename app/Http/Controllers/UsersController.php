@@ -1,7 +1,8 @@
 <?php namespace Kori\Http\Controllers;
 
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use Kori\Http\Requests;
 use Kori\Http\Requests\UserRequest;
 use Kori\User;
@@ -28,7 +29,7 @@ class UsersController extends Controller
      */
     public function show( User $user )
     {
-        return $user;
+        return view( 'users.show', compact( 'user' ) );
     }
 
     /**
@@ -56,7 +57,15 @@ class UsersController extends Controller
         $rules['email'] = 'max:255|email|unique:users,email,' . $user->id . ',id';
         $rules['username'] = 'max:255|unique:users,username,' . $user->id . ',id';
 
-        $user->update( $request->all() );
+        if ( Input::file( 'profilePic' )->isValid() ) {
+            $image = Input::file( 'profilePic' );
+            $picName = $user->username . '.' . $image->guessClientExtension();
+            $image->move( 'profilePics', $picName );
+            $user->profilePic = $picName;
+        }
+
+
+        $user->update( $request->except( 'profilePic' ) );
 
         return redirect( 'users/' . $user->username );
     }

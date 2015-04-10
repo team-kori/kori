@@ -14,6 +14,7 @@
     <file url="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Services/Registrar.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/User.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/composer.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config/app.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_100001_create_blog_posts_table.php" charset="UTF-8" />
@@ -23,14 +24,6 @@
     <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_100005_create_creations_table.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_100006_create_events_table.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_100007_create_comments_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_154949_create_creations_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_155148_create_comments_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_155448_create_galleries_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_155645_create_events_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_155850_create_categories_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_163936_add_foreign_keys_to_comments_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/database/migrations/2015_04_09_165036_add_foreign_keys_to_blog_posts_table.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/resources/assets/less/app.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/assets/less/app.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/assets/less/bootstrap/bootstrap.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/app.blade.php" charset="UTF-8" />
@@ -39,10 +32,13 @@
     <file url="file://$PROJECT_DIR$/resources/views/errors/list.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/partials/navigation.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/users/edit.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/users/show.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/factories/all.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageManager.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Registrar.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemManager.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../learn-laravel-5/database/seeds/DatabaseSeeder.php" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
