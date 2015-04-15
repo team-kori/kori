@@ -57,7 +57,7 @@ class UsersController extends Controller
         $rules['email'] = 'max:255|email|unique:users,email,' . $user->id . ',id';
         $rules['username'] = 'max:255|unique:users,username,' . $user->id . ',id';
 
-        if ( Input::file( 'profilePic' )->isValid() ) {
+        if ( Input::hasFile( 'profilePic' ) ) {
             $image = Input::file( 'profilePic' );
             $picName = $user->username . '.' . $image->guessClientExtension();
             $image->move( 'profilePics', $picName );

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1">
@@ -16,20 +16,16 @@
                 <li><a href="{{ url('/') }}">Home</a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
+            <div class="nav navbar-text navbar-right">
                 @if (Auth::guest())
-                    <li><a href="{{ url('/auth/login') }}">Login</a></li>
-                    <li><a href="{{ url('/auth/register') }}">Register</a></li>
+                    {!! link_to_action('Auth\AuthController@getRegister', 'Register') !!}
+                    {!! link_to_action('Auth\AuthController@getLogin', 'Login') !!}
                 @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false">{{ Auth::user()->email }} <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-                        </ul>
-                    </li>
+                    <a href="{{ url( 'users/' . Auth::user()->username ) }}">{{ Auth::user()->username }}</a>
+                    {!! link_to_action('Auth\AuthController@getLogout', '', null, ['class' => 'glyphicon
+                    glyphicon-share']) !!}
                 @endif
-            </ul>
+            </div>
         </div>
     </div>
 </nav>

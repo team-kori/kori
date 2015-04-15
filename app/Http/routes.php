@@ -15,6 +15,11 @@ Route::get( '/', 'HomeController@index' );
 
 Route::resource( 'users', 'UsersController' );
 
+Route::get( 'auth/verify/{confirmationCode}', [
+    'as'   => 'confirmation_path',
+    'uses' => 'RegistrationController@confirm'
+] );
+
 Route::controllers( [
     'auth'     => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',

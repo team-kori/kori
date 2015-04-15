@@ -1,0 +1,25 @@
+To: astoimenov <stoimenov.alexander@gmail.com>
+Subject: Verify your email address
+Message-ID: <525ce43e1fed84eb8a0e1da553c64a3d@localhost>
+Date: Tue, 14 Apr 2015 12:15:28 +0300
+From: Alexander <alexander.stoimenov@outlook.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en-US">
+<head>
+    <meta charset=3D"utf-8">
+</head>
+<body>
+<h2>Verify Your Email Address</h2>
+
+<div>
+    Please follow the link below to verify your email address
+    {{ URL::to('auth/verify/' . $confirmation_code) }}.<br/>
+</div>
+
+</body>
+</html>
+

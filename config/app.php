@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale'          => 'en',
+    'locale'          => 'bg',
 
     /*
     |--------------------------------------------------------------------------
@@ -145,9 +145,11 @@ return [
         'Kori\Providers\ConfigServiceProvider',
         'Kori\Providers\EventServiceProvider',
         'Kori\Providers\RouteServiceProvider',
+        'Kori\Providers\ViewComposerServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Generators\GeneratorsServiceProvider',
         'Laravel\Socialite\SocialiteServiceProvider',
+        'Monarobase\CountryList\CountryListServiceProvider',
 
     ],
 
@@ -172,6 +174,7 @@ return [
         'Cache'     => 'Illuminate\Support\Facades\Cache',
         'Config'    => 'Illuminate\Support\Facades\Config',
         'Cookie'    => 'Illuminate\Support\Facades\Cookie',
+        'Countries' => 'Monarobase\CountryList\CountryListFacade',
         'Crypt'     => 'Illuminate\Support\Facades\Crypt',
         'DB'        => 'Illuminate\Support\Facades\DB',
         'Eloquent'  => 'Illuminate\Database\Eloquent\Model',

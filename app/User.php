@@ -30,6 +30,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'lastName',
         'email',
         'password',
+        'confirmation_code',
         'profilePic',
         'facebook',
         'twitter',

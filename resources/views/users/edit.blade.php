@@ -101,7 +101,7 @@ Form::macro( 'tel', function ( $value ) {
         {{-- LinkedIn form input --}}
         <div class="form-group col-sm-4">
             {!! Form::label('linkedIn', 'LinkedIn:') !!}
-            {!! Form::text('linkedIn', null, ['class' => 'form-control']) !!}
+            {!! Form::text('linkedIn', null, ['class' => 'form-control', 'placeholder' => 'http://example.com']) !!}
         </div>
 
 
@@ -116,7 +116,7 @@ Form::macro( 'tel', function ( $value ) {
         {{-- Country form input --}}
         <div class="form-group col-sm-6">
             {!! Form::label('country', 'Country:') !!}
-            {!! Form::select('country', ['key' => 'value'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('country', Countries::getList( App::getLocale(), 'php', 'icu' ), null, ['class' => 'form-control']) !!}
         </div>
 
         {{-- City form input --}}

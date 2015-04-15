@@ -1,0 +1,25 @@
+To: kori <kori.project.team@gmail.com>
+Subject: Verify your email address
+Message-ID: <256d5fa0013f551ca254bb9e7a41018f@localhost>
+Date: Tue, 14 Apr 2015 12:58:47 +0300
+From: Alexander <stoimenov.alexander@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en-US">
+<head>
+    <meta charset=3D"utf-8">
+</head>
+<body>
+<h2>Verify Your Email Address</h2>
+
+<div>
+    Please follow the link below to verify your email address
+    http://localhost:8888/auth/verify/MCRlgq02gkdJznYOw5KOfg3NWH8sRC<br/>
+</div>
+
+</body>
+</html>
+

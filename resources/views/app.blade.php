@@ -13,9 +13,10 @@
 
 </head>
 <body>
-@include('partials.navigation')
 
 <div class="container">
+    @include('partials.navigation')
+
     @yield('content')
 </div>
 
