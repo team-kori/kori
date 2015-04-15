@@ -38,6 +38,7 @@ class AuthController extends Controller
 
         $this->middleware( 'guest', [ 'except' => 'getLogout' ] );
         $this->middleware( 'auth', [ 'only' => 'getLogout' ] );
+        $this->middleware( 'emailConfirmed', [ 'only' => 'postLogin' ] );
     }
 
 }

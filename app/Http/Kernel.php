@@ -28,6 +28,7 @@ class Kernel extends HttpKernel
         'auth'       => 'Kori\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
         'guest'      => 'Kori\Http\Middleware\RedirectIfAuthenticated',
+        'emailConfirmed' => 'Kori\Http\Middleware\EmailConfirmed',
     ];
 
 }
