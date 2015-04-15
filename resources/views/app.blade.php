@@ -7,6 +7,7 @@
     <title>Laravel</title>
 
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}"/>
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
