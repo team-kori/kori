@@ -6,9 +6,9 @@
         <a href="{{ urldecode( url( '/users', $user->username . '/edit' ) ) }}"
            class="btn btn-default glyphicon glyphicon-edit"></a>
     </h2>
-    <img src="{{ asset( 'profilePics/' . $user->profilePic ) }}"
+    <img src="{{ asset( 'profilePics/' . ( $user->profilePic ? $user->profilePic : ( ( $user->gender == 'f' ) ? 'default-female-pic.png' : 'default-male-pic.png' ) ) ) }}"
          alt="{{ $user->username }}'s profile picture"
-         title="{{ $user->username }}'s profile picture"/>
+         title="{{ $user->username }}'s profile picture" class="img-circle profilePic" />
 
     <div class="row">
         <dl class="col-sm-6">
@@ -27,10 +27,10 @@
             @if($user->country)
                 <dt>Location</dt>
                 <dd>
-                    {{ $user->city . ', ' . Countries::getOne($user->country, App::getLocale(), 'icu') }}
+                    {{ ( $user->city ? $user->city . ', ' : '' ) . Countries::getOne($user->country, App::getLocale(), 'icu') }}
                 </dd>
             @endif
-            @if($user->birthDate)
+            @if($user->birthDate->year >= 1901)
                 <dt>Date of birth</dt>
                 <dd><time datetime="{{ $user->birthDate }}">{{ $user->birthDate->toFormattedDateString() }}</time></dd>
             @endif
@@ -39,7 +39,7 @@
                 <dd>{{ $user->phoneNumber }}</dd>
             @endif
         </dl>
-        <ul class="col-sm-6">
+        <ul class="col-sm-6 list-unstyled">
             @if($user->facebook)
                 <li>
                     <a href="{{ $user->facebook }}">Facebook</a>

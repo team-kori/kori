@@ -11,16 +11,35 @@
 |
 */
 
-Route::get( '/', 'HomeController@index' );
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
 
-Route::resource( 'users', 'UsersController' );
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
+]);
 
-Route::get( 'auth/verify/{confirmationCode}', [
-    'as'   => 'confirmation_path',
+Route::resource('users', 'UsersController');
+//Route::get( '' );
+
+Route::get('auth/verify/{confirmationCode}', [
+    'as' => 'confirmation_path',
     'uses' => 'RegistrationController@confirm'
-] );
+]);
 
-Route::controllers( [
-    'auth'     => 'Auth\AuthController',
+Route::controllers([
+    'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
-] );
+]);
+
+Route::get('migrate', function () {
+
+    echo '<br>init with Migrate tables ...';
+    Artisan::call('migrate:install');
+    Artisan::call('migrate', ['--quiet' => true, '--force' => true]);
+    echo '<br>done with Migrate tables';
+});
+
+Route::get('composer', function () {
+    shell_exec('composer install');
+});

@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
      * @param  Guard $auth
      *
      */
-    public function __construct( Guard $auth )
+    public function __construct(Guard $auth)
     {
         $this->auth = $auth;
     }
@@ -29,17 +29,16 @@ class RedirectIfAuthenticated
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \Closure                 $next
+     * @param  \Closure $next
      *
      * @return mixed
      */
-    public function handle( $request, Closure $next )
+    public function handle($request, Closure $next)
     {
-        if ( $this->auth->check() ) {
-            return new RedirectResponse( url( '/home' ) );
+        if ($this->auth->check()) {
+            return new RedirectResponse(url('/home'));
         }
 
-        return $next( $request );
+        return $next($request);
     }
-
 }

@@ -11,27 +11,26 @@ class EmailConfirmed
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \Closure                 $next
+     * @param  \Closure $next
      *
      * @return mixed
      */
-    public function handle( $request, Closure $next )
+    public function handle($request, Closure $next)
     {
         $credentials = [
-            'email'     => $request['email'],
-            'password'  => $request['password'],
+            'email' => $request['email'],
+            'password' => $request['password'],
             'confirmed' => 1
         ];
 
-        if ( !Auth::attempt( $credentials ) ) {
+        if (!Auth::attempt($credentials)) {
             return Redirect::back()
                 ->withInput()
-                ->withErrors( [
+                ->withErrors([
                     'credentials' => 'Email is not confirmed.'
-                ] );
+                ]);
         }
 
-        return $next( $request );
+        return $next($request);
     }
-
 }

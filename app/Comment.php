@@ -18,27 +18,27 @@ class Comment extends Model
 
     public function blogPost()
     {
-        return $this->belongsTo( 'Kori\BlogPost' );
+        return $this->belongsTo('Kori\BlogPost');
     }
 
     public function creation()
     {
-        return $this->belongsTo( 'Kori\Creation' );
+        return $this->belongsTo('Kori\Creation');
     }
 
     public function user()
     {
-        return $this->belongsTo( 'Kori\User' );
+        return $this->belongsTo('Kori\User');
     }
 
     public function gallery()
     {
-        return $this->belongsTo( 'Kori\Gallery' );
+        return $this->belongsTo('Kori\Gallery');
     }
 
     public function event()
     {
-        return $this->belongsTo( 'Kori\Event' );
+        return $this->belongsTo('Kori\Event');
     }
 
 }

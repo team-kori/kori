@@ -18,12 +18,12 @@ class Category extends Model
 
     public function category()
     {
-        return $this->hasOne( 'Kori\Category' );
+        return $this->hasOne('Kori\Category');
     }
 
     public function users()
     {
-        return $this->belongsToMany( 'Kori\User' );
+        return $this->belongsToMany('Kori\User');
     }
 
 }

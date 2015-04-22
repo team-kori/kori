@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver'   => 'eloquent',
+    'driver' => 'eloquent',
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model'    => 'Kori\User',
+    'model' => 'Kori\User',
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'table'    => 'users',
+    'table' => 'users',
 
     /*
     |--------------------------------------------------------------------------
@@ -59,8 +59,8 @@ return [
     */
 
     'password' => [
-        'email'  => 'emails.password',
-        'table'  => 'password_resets',
+        'email' => 'emails.password',
+        'table' => 'password_resets',
         'expire' => 60,
     ],
 

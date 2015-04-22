@@ -19,17 +19,17 @@ class Gallery extends Model
 
     public function comments()
     {
-        return $this->hasMany( 'Kori\Comment' );
+        return $this->hasMany('Kori\Comment');
     }
 
     public function creations()
     {
-        return $this->hasMany( 'Kori\Creation' );
+        return $this->hasMany('Kori\Creation');
     }
 
     public function user()
     {
-        return $this->belongsTo( 'Kori\User' );
+        return $this->belongsTo('Kori\User');
     }
 
 }

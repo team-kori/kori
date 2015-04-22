@@ -1,8 +1,4 @@
 @extends('app')
-<?php
-Form::macro( 'tel', function ( $value ) {
-    return '<input type="tel" name="my_custom_datetime_field" value="' . $value . '"/>';
-} ); ?>
 
 @section('content')
     @include('errors.list')
@@ -107,22 +103,28 @@ Form::macro( 'tel', function ( $value ) {
 
         <div class="form-group col-sm-4">
             {!! Form::label('birthDate', 'Birth date:') !!}
-            {!! Form::input('date', 'birthDate', $user->birthDate->format('Y-m-d'), ['class' =>
-            'form-control']) !!}
+            {!! Form::input('date', 'birthDate', $user->birthDate->format('Y-m-d'),
+                    ['class' => 'form-control']) !!}
         </div>
     </div>
 
     <div class="row">
         {{-- Country form input --}}
-        <div class="form-group col-sm-6">
+        <div class="form-group col-sm-4">
             {!! Form::label('country', 'Country:') !!}
             {!! Form::select('country', Countries::getList( App::getLocale(), 'php', 'icu' ), null, ['class' => 'form-control']) !!}
         </div>
 
         {{-- City form input --}}
-        <div class="form-group col-sm-6">
+        <div class="form-group col-sm-4">
             {!! Form::label('city', 'City:') !!}
             {!! Form::text('city', null, ['class' => 'form-control']) !!}
+        </div>
+
+        {{-- Country form input --}}
+        <div class="form-group col-sm-4">
+            {!! Form::label('gender', 'Gender:') !!}
+            {!! Form::select('gender', ['m' => 'Male', 'f' => 'Female'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
 

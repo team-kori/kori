@@ -21,12 +21,11 @@ class Event extends Model
 
     public function user()
     {
-        return $this->belongsTo( 'Kori\User' );
+        return $this->belongsTo('Kori\User');
     }
 
     public function comments()
     {
-        return $this->hasMany( 'Kori\Comment' );
+        return $this->hasMany('Kori\Comment');
     }
-
 }

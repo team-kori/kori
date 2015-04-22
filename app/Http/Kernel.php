@@ -25,10 +25,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'       => 'Kori\Http\Middleware\Authenticate',
+        'auth' => 'Kori\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest'      => 'Kori\Http\Middleware\RedirectIfAuthenticated',
+        'guest' => 'Kori\Http\Middleware\RedirectIfAuthenticated',
         'emailConfirmed' => 'Kori\Http\Middleware\EmailConfirmed',
+        'admin' => 'Kori\Http\Middleware\Admin',
     ];
-
 }

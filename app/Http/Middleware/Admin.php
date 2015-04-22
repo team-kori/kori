@@ -1,9 +1,10 @@
 <?php namespace Kori\Http\Middleware;
 
 use Closure;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
-class VerifyCsrfToken extends BaseVerifier
+class Admin
 {
 
     /**
@@ -11,11 +12,14 @@ class VerifyCsrfToken extends BaseVerifier
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Closure $next
-     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        return parent::handle($request, $next);
+        if (Auth::user()->role != 'admin') {
+            return Redirect::back();
+        }
+
+        return $next($request);
     }
 }

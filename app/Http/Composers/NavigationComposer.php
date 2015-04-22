@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Auth;
 
 class NavigationComposer
 {
-    public function compose( View $view )
+    public function compose(View $view)
     {
-        if ( Auth::user() ) {
-            $view->with( 'currentUser', Auth::user() );
+        if (Auth::user()) {
+            $view->with('user', Auth::user());
         }
     }
 }

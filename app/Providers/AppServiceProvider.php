@@ -31,5 +31,4 @@ class AppServiceProvider extends ServiceProvider
             'Kori\Services\Registrar'
         );
     }
-
 }

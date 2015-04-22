@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug'           => env( 'APP_DEBUG', false ),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url'             => 'http://localhost:8000',
+    'url' => 'http://localhost:8000',
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone'        => 'Europe/Sofia',
+    'timezone' => 'Europe/Sofia',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale'          => 'bg',
+    'locale' => 'bg',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,9 +78,9 @@ return [
     |
     */
 
-    'key'             => env( 'APP_KEY', 'SomeRandomString' ),
+    'key' => env('APP_KEY', 'SomeRandomString'),
 
-    'cipher'          => MCRYPT_RIJNDAEL_128,
+    'cipher' => MCRYPT_RIJNDAEL_128,
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log'             => 'daily',
+    'log' => 'daily',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'providers'       => [
+    'providers' => [
 
         /*
          * Laravel Framework Service Providers...
@@ -164,45 +164,45 @@ return [
     |
     */
 
-    'aliases'         => [
+    'aliases' => [
 
-        'App'       => 'Illuminate\Support\Facades\App',
-        'Artisan'   => 'Illuminate\Support\Facades\Artisan',
-        'Auth'      => 'Illuminate\Support\Facades\Auth',
-        'Blade'     => 'Illuminate\Support\Facades\Blade',
-        'Bus'       => 'Illuminate\Support\Facades\Bus',
-        'Cache'     => 'Illuminate\Support\Facades\Cache',
-        'Config'    => 'Illuminate\Support\Facades\Config',
-        'Cookie'    => 'Illuminate\Support\Facades\Cookie',
+        'App' => 'Illuminate\Support\Facades\App',
+        'Artisan' => 'Illuminate\Support\Facades\Artisan',
+        'Auth' => 'Illuminate\Support\Facades\Auth',
+        'Blade' => 'Illuminate\Support\Facades\Blade',
+        'Bus' => 'Illuminate\Support\Facades\Bus',
+        'Cache' => 'Illuminate\Support\Facades\Cache',
+        'Config' => 'Illuminate\Support\Facades\Config',
+        'Cookie' => 'Illuminate\Support\Facades\Cookie',
         'Countries' => 'Monarobase\CountryList\CountryListFacade',
-        'Crypt'     => 'Illuminate\Support\Facades\Crypt',
-        'DB'        => 'Illuminate\Support\Facades\DB',
-        'Eloquent'  => 'Illuminate\Database\Eloquent\Model',
-        'Event'     => 'Illuminate\Support\Facades\Event',
-        'File'      => 'Illuminate\Support\Facades\File',
-        'Flash'     => 'Laracasts\Flash\Flash',
-        'Form'      => 'Illuminate\Html\FormFacade',
-        'Hash'      => 'Illuminate\Support\Facades\Hash',
-        'Html'      => 'Illuminate\Html\HtmlFacade',
-        'Input'     => 'Illuminate\Support\Facades\Input',
+        'Crypt' => 'Illuminate\Support\Facades\Crypt',
+        'DB' => 'Illuminate\Support\Facades\DB',
+        'Eloquent' => 'Illuminate\Database\Eloquent\Model',
+        'Event' => 'Illuminate\Support\Facades\Event',
+        'File' => 'Illuminate\Support\Facades\File',
+        'Flash' => 'Laracasts\Flash\Flash',
+        'Form' => 'Illuminate\Html\FormFacade',
+        'Hash' => 'Illuminate\Support\Facades\Hash',
+        'Html' => 'Illuminate\Html\HtmlFacade',
+        'Input' => 'Illuminate\Support\Facades\Input',
         'Inspiring' => 'Illuminate\Foundation\Inspiring',
-        'Lang'      => 'Illuminate\Support\Facades\Lang',
-        'Log'       => 'Illuminate\Support\Facades\Log',
-        'Mail'      => 'Illuminate\Support\Facades\Mail',
-        'Password'  => 'Illuminate\Support\Facades\Password',
-        'Queue'     => 'Illuminate\Support\Facades\Queue',
-        'Redirect'  => 'Illuminate\Support\Facades\Redirect',
-        'Redis'     => 'Illuminate\Support\Facades\Redis',
-        'Request'   => 'Illuminate\Support\Facades\Request',
-        'Response'  => 'Illuminate\Support\Facades\Response',
-        'Route'     => 'Illuminate\Support\Facades\Route',
-        'Schema'    => 'Illuminate\Support\Facades\Schema',
-        'Session'   => 'Illuminate\Support\Facades\Session',
+        'Lang' => 'Illuminate\Support\Facades\Lang',
+        'Log' => 'Illuminate\Support\Facades\Log',
+        'Mail' => 'Illuminate\Support\Facades\Mail',
+        'Password' => 'Illuminate\Support\Facades\Password',
+        'Queue' => 'Illuminate\Support\Facades\Queue',
+        'Redirect' => 'Illuminate\Support\Facades\Redirect',
+        'Redis' => 'Illuminate\Support\Facades\Redis',
+        'Request' => 'Illuminate\Support\Facades\Request',
+        'Response' => 'Illuminate\Support\Facades\Response',
+        'Route' => 'Illuminate\Support\Facades\Route',
+        'Schema' => 'Illuminate\Support\Facades\Schema',
+        'Session' => 'Illuminate\Support\Facades\Session',
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
-        'Storage'   => 'Illuminate\Support\Facades\Storage',
-        'URL'       => 'Illuminate\Support\Facades\URL',
+        'Storage' => 'Illuminate\Support\Facades\Storage',
+        'URL' => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
-        'View'      => 'Illuminate\Support\Facades\View',
+        'View' => 'Illuminate\Support\Facades\View',
 
     ],
 

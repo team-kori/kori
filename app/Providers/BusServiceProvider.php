@@ -13,13 +13,15 @@ class BusServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot( Dispatcher $dispatcher )
+    public function boot(Dispatcher $dispatcher)
     {
-        $dispatcher->mapUsing( function ( $command ) {
+        $dispatcher->mapUsing(function ($command) {
             return Dispatcher::simpleMapping(
-                $command, 'Kori\Commands', 'Kori\Handlers\Commands'
+                $command,
+                'Kori\Commands',
+                'Kori\Handlers\Commands'
             );
-        } );
+        });
     }
 
     /**
@@ -31,5 +33,4 @@ class BusServiceProvider extends ServiceProvider
     {
         //
     }
-
 }

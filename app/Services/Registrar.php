@@ -1,10 +1,8 @@
 <?php namespace Kori\Services;
 
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Mail;
 use Kori\User;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Registrar implements RegistrarContract
 {
@@ -16,13 +14,13 @@ class Registrar implements RegistrarContract
      *
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    public function validator( array $data )
+    public function validator(array $data)
     {
-        return Validator::make( $data, [
+        return Validator::make($data, [
             'username' => 'required|max:255|unique:users',
-            'email'    => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-        ] );
+        ]);
     }
 
     /**
@@ -32,21 +30,22 @@ class Registrar implements RegistrarContract
      *
      * @return User
      */
-    public function create( array $data )
+    public function create(array $data)
     {
-        $confirmation_code = str_random( 30 );
+        $confirmation_code = str_random(30);
 
-        Mail::send( 'emails.verify', array( 'confirmation_code' => $confirmation_code ), function ( $message ) {
+        /*Mail::send( 'emails.verify', array( 'confirmation_code' => $confirmation_code ), function ( $message ) {
             $message->to( Input::get( 'email' ), Input::get( 'username' ) )
                 ->subject( 'Verify your email address' );
-        } );
+        } );*/
 
-        return User::create( [
-            'username'          => $data['username'],
-            'email'             => $data['email'],
-            'password'          => bcrypt( $data['password'] ),
+        flash()->overlay('Successfully registered. Check your email to verify it.');
+
+        return User::create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
             'confirmation_code' => $confirmation_code
-        ] );
+        ]);
     }
-
 }

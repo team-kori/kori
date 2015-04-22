@@ -7,6 +7,11 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int id
+ * @property string username
+ * @property string profilePic
+ */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
 
@@ -44,7 +49,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'country',
         'city',
         'phoneNumber',
-        'isArtist',
+        'role',
+        'gender',
     ];
 
     /**
@@ -62,9 +68,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @param $date
      */
-    public function setBirthDateAttribute( $date )
+    public function setBirthDateAttribute($date)
     {
-        $this->attributes['birthDate'] = Carbon::createFromFormat( 'Y-m-d', $date );
+        if ($date) {
+            $this->attributes['birthDate'] = Carbon::createFromFormat('Y-m-d', $date);
+        } else {
+            $this->attributes['birthDate'] = null;
+        }
     }
 
     /**
@@ -74,39 +84,38 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @return Carbon
      */
-    public function getBirthDateAttribute( $date )
+    public function getBirthDateAttribute($date)
     {
-        return new Carbon( $date );
+        return new Carbon($date);
     }
 
     public function blogPosts()
     {
-        return $this->hasMany( 'Kori\BlogPost' );
+        return $this->hasMany('Kori\BlogPost');
     }
 
     public function comments()
     {
-        return $this->hasMany( 'Kori\Comment' );
+        return $this->hasMany('Kori\Comment');
     }
 
     public function creations()
     {
-        return $this->hasMany( 'Kori\Creation' );
+        return $this->hasMany('Kori\Creation');
     }
 
     public function galleries()
     {
-        return $this->hasMany( 'Kori\Gallery' );
+        return $this->hasMany('Kori\Gallery');
     }
 
     public function events()
     {
-        return $this->hasMany( 'Kori\Event' );
+        return $this->hasMany('Kori\Event');
     }
 
     public function category()
     {
-        return $this->belongsToMany( 'Kori\Category' );
+        return $this->belongsToMany('Kori\Category');
     }
-
 }

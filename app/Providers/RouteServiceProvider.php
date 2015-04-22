@@ -23,13 +23,13 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot( Router $router )
+    public function boot(Router $router)
     {
-        parent::boot( $router );
+        parent::boot($router);
 
-        $router->bind( 'users', function ( $username ) {
-            return User::whereUsername( $username )->firstOrFail();
-        } );
+        $router->bind('users', function ($username) {
+            return User::whereUsername($username)->firstOrFail();
+        });
     }
 
     /**
@@ -40,7 +40,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->loadRoutesFrom( app_path( 'Http/routes.php' ) );
+        $this->loadRoutesFrom(app_path('Http/routes.php'));
     }
-
 }

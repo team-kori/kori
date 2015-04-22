@@ -1,14 +1,23 @@
 <?php namespace Kori\Http\Controllers;
 
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 use Kori\Http\Requests;
 use Kori\Http\Requests\UserRequest;
 use Kori\User;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => 'show'
+        ]);
+
+        $this->middleware('admin', [
+            'only' => 'index'
+        ]);
+    }
 
     /**
      * Display a listing of the users.
@@ -17,7 +26,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -27,9 +38,9 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function show( User $user )
+    public function show(User $user)
     {
-        return view( 'users.show', compact( 'user' ) );
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -39,35 +50,35 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function edit( User $user )
+    public function edit(User $user)
     {
-        return view( 'users.edit', compact( 'user' ) );
+        return view('users.edit', compact('user'));
     }
 
     /**
      * Update the specified user in storage.
      *
-     * @param  User       $user *
+     * @param  User $user *
      * @param UserRequest $request
      *
      * @return Response
      */
-    public function update( User $user, UserRequest $request )
+    public function update(User $user, UserRequest $request)
     {
         $rules['email'] = 'max:255|email|unique:users,email,' . $user->id . ',id';
         $rules['username'] = 'max:255|unique:users,username,' . $user->id . ',id';
 
-        if ( Input::hasFile( 'profilePic' ) ) {
-            $image = Input::file( 'profilePic' );
+        if (Input::hasFile('profilePic')) {
+            $image = Input::file('profilePic');
             $picName = $user->username . '.' . $image->guessClientExtension();
-            $image->move( 'profilePics', $picName );
+            $image->move('profilePics', $picName);
             $user->profilePic = $picName;
         }
 
 
-        $user->update( $request->except( 'profilePic' ) );
+        $user->update($request->except('profilePic'));
 
-        return redirect( 'users/' . $user->username );
+        return redirect('users/' . $user->username);
     }
 
     /**
@@ -77,9 +88,10 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function destroy( User $user )
+    public function destroy(User $user)
     {
-        //
-    }
+        $user->delete();
 
+        return redirect('users');
+    }
 }
